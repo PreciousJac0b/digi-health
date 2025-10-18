@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
+import stateRoutes from './routes/stateRoutes';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use(
 );
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/state', stateRoutes);
 
 
 const PORT: number = parseInt(process.env.PORT || '', 10) || 3000;
